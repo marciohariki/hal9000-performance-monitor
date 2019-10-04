@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.5d7ca7d4.chunk.js",
-    "main.js.map": "/static/js/main.5d7ca7d4.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.c3b54b9a.chunk.js": "/static/js/2.c3b54b9a.chunk.js",
-    "static/js/2.c3b54b9a.chunk.js.map": "/static/js/2.c3b54b9a.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.26cb172bc7074ffc52d6d1ddeb23bdae.js": "/precache-manifest.26cb172bc7074ffc52d6d1ddeb23bdae.js",
-    "service-worker.js": "/service-worker.js"
+    "main.js": "/hal9000-performance-monitor/static/js/main.5d7ca7d4.chunk.js",
+    "main.js.map": "/hal9000-performance-monitor/static/js/main.5d7ca7d4.chunk.js.map",
+    "runtime~main.js": "/hal9000-performance-monitor/static/js/runtime~main.ddf60234.js",
+    "runtime~main.js.map": "/hal9000-performance-monitor/static/js/runtime~main.ddf60234.js.map",
+    "static/js/2.c3b54b9a.chunk.js": "/hal9000-performance-monitor/static/js/2.c3b54b9a.chunk.js",
+    "static/js/2.c3b54b9a.chunk.js.map": "/hal9000-performance-monitor/static/js/2.c3b54b9a.chunk.js.map",
+    "index.html": "/hal9000-performance-monitor/index.html",
+    "precache-manifest.38f24b60e403df36722569f5968757ed.js": "/hal9000-performance-monitor/precache-manifest.38f24b60e403df36722569f5968757ed.js",
+    "service-worker.js": "/hal9000-performance-monitor/service-worker.js"
   }
 }
