@@ -1,5 +1,11 @@
+import { BaseLayout } from "../components";
+
 const App = () => {
-  return <div>Teste 123</div>;
+  return (
+    <BaseLayout>
+      <p>Teste</p>
+    </BaseLayout>
+  );
 };
 
 export default App;
