@@ -15,6 +15,16 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+        env:
+          REACT_APP_APIKEY: ${{ secrets.APIKEY }}
+          REACT_APP_AUTHDOMAIN: ${{ secrets.AUTHDOMAIN }}
+          REACT_APP_DATABASEURL: ${{ secrets.DATABASEURL }}
+          REACT_APP_PROJECTID: ${{ secrets.PROJECTID }}
+          REACT_APP_STORAGEBUCKET: ${{ secrets.STORAGEBUCKET }}
+          REACT_APP_MESSAGINGSENDERID: ${{ secrets.MESSAGINGSENDERID }}
+          REACT_APP_APPID: ${{ secrets.APPID }}
+          REACT_APP_MEASUREMENTID: ${{ secrets.MEASUREMENTID }}
+          REACT_APP_PROJECTAPI: ${{ secrets.PROJECTAPI }}
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
