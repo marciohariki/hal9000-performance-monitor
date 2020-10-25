@@ -10,7 +10,7 @@ const Container = ({ children, ...props }) => (
 const S = {
   Content: styled(Layout.Content)`
     min-height: calc(100vh - 128px);
-    padding: 0 50px;
+    padding: 64px;
     margin-top: 64px;
   `,
 };

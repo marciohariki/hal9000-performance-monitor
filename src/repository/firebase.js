@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -96,50 +96,6 @@ const useGetCollection = (collection) => {
   };
 };
 
-const useGetUserDocument = () => {
-  const [doc, setDoc] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  const {
-    data: currentUser,
-    loading: loadingCurrentUser,
-    error: errorCurrentUser,
-  } = useGetAuthUser();
-
-  useEffect(() => {
-    if (currentUser) {
-      db.collection("users")
-        .doc(currentUser.uid)
-        .get()
-        .then((doc) => {
-          if (doc.exists) {
-            setDoc(doc.data());
-          } else {
-            console.error("Document not exists");
-          }
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Document not found.", error);
-          setError(error);
-          setLoading(false);
-        });
-    }
-
-    if ((!loadingCurrentUser && !currentUser) || errorCurrentUser) {
-      console.error("User not found.");
-      setLoading(false);
-    }
-  }, [currentUser, loadingCurrentUser, errorCurrentUser]);
-
-  return {
-    data: doc,
-    loading,
-    error,
-  };
-};
-
 const useGetDocument = (collection, docId) => {
   const [doc, setDoc] = useState(null);
   const [error, setError] = useState(null);
@@ -173,6 +129,31 @@ const useGetDocument = (collection, docId) => {
   };
 };
 
+const useCreateDocument = (collection) => {
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const createDocument = async (document) => {
+    setLoading(true);
+    try {
+      const doc = await db.collection(collection).add(document);
+      const docRef = await doc.get();
+      setLoading(false);
+      return { ...docRef.data(), id: docRef.id };
+    } catch (error) {
+      console.error("Failed to create document", error);
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  return {
+    createDocument,
+    loading,
+    error,
+  };
+};
+
 const signOut = () => {
   firebase.auth().signOut();
 };
@@ -183,6 +164,6 @@ export {
   useGetAuthUser,
   useGetCollection,
   useGetDocument,
-  useGetUserDocument,
+  useCreateDocument,
   signOut,
 };

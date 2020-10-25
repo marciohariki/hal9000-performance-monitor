@@ -17,8 +17,8 @@ const Header = () => {
           Home
         </Menu.Item>
         <Menu.Item
-          key={ROUTE_PATH.METRICS}
-          onClick={redirectTo(ROUTE_PATH.METRICS)}
+          key={ROUTE_PATH.METRICS.LIST}
+          onClick={redirectTo(ROUTE_PATH.METRICS.LIST)}
         >
           Métricas
         </Menu.Item>

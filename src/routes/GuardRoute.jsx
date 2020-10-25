@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { useGetAuthUser } from "../repository";
 import { Skeleton } from "antd";
+import { ROUTE_PATH } from "./index";
 
 const GuardRoute = ({ children }) => {
   const {
@@ -15,7 +16,7 @@ const GuardRoute = ({ children }) => {
   if (loadingCurrentUser) return <Skeleton active />;
 
   if (errorCurrentUser || !user) {
-    history.replace("/");
+    history.replace(ROUTE_PATH.LOGIN);
     return null;
   }
 

@@ -1,7 +1,11 @@
 const ROUTE_PATH = {
   LOGIN: "/",
   HOME: "/app",
-  METRICS: "/metrics",
+  METRICS: {
+    LIST: "/metrics",
+    CREATE: "/metrics/create",
+    UPDATE: "/metrics/update",
+  },
   PEOPLE: "/people",
   LOGOUT: "/logout",
 };
