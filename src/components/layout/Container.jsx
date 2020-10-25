@@ -1,13 +1,18 @@
 import { Layout } from "antd";
+import styled from "styled-components";
 
 const Container = ({ children, ...props }) => (
-  <Layout.Content
-    className="site-layout"
-    style={{ padding: "0 50px", marginTop: 64 }}
-    {...props}
-  >
+  <S.Content className="site-layout" {...props}>
     {children}
-  </Layout.Content>
+  </S.Content>
 );
+
+const S = {
+  Content: styled(Layout.Content)`
+    min-height: calc(100vh - 128px);
+    padding: 0 50px;
+    margin-top: 64px;
+  `,
+};
 
 export default Container;

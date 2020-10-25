@@ -173,6 +173,10 @@ const useGetDocument = (collection, docId) => {
   };
 };
 
+const signOut = () => {
+  firebase.auth().signOut();
+};
+
 export {
   firebase,
   firebaseAuthProviders,
@@ -180,4 +184,5 @@ export {
   useGetCollection,
   useGetDocument,
   useGetUserDocument,
+  signOut,
 };
